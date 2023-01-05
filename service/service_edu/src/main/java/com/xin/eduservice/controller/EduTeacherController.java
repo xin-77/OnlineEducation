@@ -9,6 +9,7 @@ import com.xin.commonutils.R;
 import com.xin.eduservice.entity.EduTeacher;
 import com.xin.eduservice.entity.vo.TeacherQuery;
 import com.xin.eduservice.service.EduTeacherService;
+import com.xin.servicebase.exceptionHandler.GuliException;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -29,6 +30,7 @@ import java.util.List;
 @Api(description="讲师管理")
 @RestController
 @RequestMapping("/eduservice/teacher")
+@CrossOrigin
 public class EduTeacherController {
 
     @Resource
@@ -42,7 +44,12 @@ public class EduTeacherController {
         List<EduTeacher> list = eduTeacherService.list(null);
 
         // 模拟异常
-        int i = 10 / 0;
+//        try {
+//            int i = 10 / 0;
+//        }catch (Exception e){
+//            // 执行自定义异常
+//            throw new GuliException(20001,"执行了自定义异常");
+//        }
 
         return R.ok().data("items",list);
 
@@ -72,7 +79,7 @@ public class EduTeacherController {
         long total = page.getTotal();
         List<EduTeacher> records = page.getRecords();
 
-        return R.ok().data("total", total).data("records", records);
+        return R.ok().data("total", total).data("rows", records);
     }
 
     //4 条件查询带分页的方法
@@ -93,7 +100,7 @@ public class EduTeacherController {
         eduTeacherService.page(page, wrapper);
         long total = page.getTotal();
         List<EduTeacher> records = page.getRecords();
-        return R.ok().data("total", total).data("records", records);
+        return R.ok().data("total", total).data("rows", records);
 
 
     }

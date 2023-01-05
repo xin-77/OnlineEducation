@@ -5,9 +5,13 @@
     <file url="file://$PROJECT_DIR$/common/service_base/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service/service-oss/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service/service_edu/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service/service_edu/src/main/resources/application.properties" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service/service_edu/src/main/resources/logback-spring.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service/service_edu/src/test/java/com/xin/demo/CodeGenerator.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service/service_edu/src/test/java/com/xin/demo/excel/ExcelListener.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service/service_oss/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />

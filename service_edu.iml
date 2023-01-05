@@ -14,11 +14,7 @@
       </configuration>
     </facet>
     <facet type="Spring" name="Spring">
-      <configuration>
-        <fileset id="fileset" name="Spring 应用程序上下文" removed="false">
-          <file>file://$MODULE_DIR$/service/service_edu/src/main/resources/application.properties</file>
-        </fileset>
-      </configuration>
+      <configuration />
     </facet>
   </component>
 </module>
