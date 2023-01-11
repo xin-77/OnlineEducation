@@ -2,15 +2,14 @@ package com.xin.eduservice.controller;
 
 
 import com.xin.commonutils.R;
+import com.xin.eduservice.entity.subject.OneSubject;
 import com.xin.eduservice.service.EduSubjectService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * <p>
@@ -37,5 +36,12 @@ public class EduSubjectController {
         return R.ok();
     }
 
+    // 课程分类列表（树型）
+    @GetMapping("getAllSubject")
+    public R getAllSubject(){
+
+        List<OneSubject> list = eduSubjectService.getAllOneTwoSubject();
+        return R.ok().data("list", list);
+    }
 }
 
