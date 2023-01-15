@@ -1,5 +1,6 @@
 package com.xin.eduservice.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xin.eduservice.entity.EduTeacher;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -13,4 +14,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface EduTeacherService extends IService<EduTeacher> {
 
+    void getTeacherFrontList(Page<EduTeacher> teacherPage);
 }

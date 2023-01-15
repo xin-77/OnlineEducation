@@ -6,12 +6,22 @@
     <file url="file://$PROJECT_DIR$/common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service/service-oss/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service/service_acl/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service/service_acl/src/main/resources/application.properties" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service/service_cms/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service/service_cms/src/main/resources/application.properties" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service/service_cms/src/test/java/codedemo/CodeGenerator.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service/service_edu/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service/service_edu/src/main/resources/application.properties" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service/service_edu/src/main/resources/logback-spring.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service/service_edu/src/test/java/com/xin/demo/CodeGenerator.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service/service_edu/src/test/java/com/xin/demo/excel/ExcelListener.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service/service_msm/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service/service_msm/src/main/resources/application.properties" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service/service_oss/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service/service_ucenter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service/service_ucenter/src/main/resources/application.properties" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service/service_ucenter/src/test/java/CodeGenerator.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service/service_vod/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service/service_vod/src/test/java/com/xin/vodtest/TestVod.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service/src/main/java" charset="UTF-8" />
