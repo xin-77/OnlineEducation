@@ -1,21 +1,27 @@
 package com.xin.eduservice.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xin.eduservice.entity.EduCourse;
 import com.xin.eduservice.entity.EduCourseDescription;
+import com.xin.eduservice.entity.EduTeacher;
+import com.xin.eduservice.entity.frontVo.CourseFrontVo;
+import com.xin.eduservice.entity.frontVo.CourseWebVo;
 import com.xin.eduservice.entity.vo.CourseInfoVo;
 import com.xin.eduservice.entity.vo.CoursePublishVo;
 import com.xin.eduservice.mapper.EduCourseMapper;
-import com.xin.eduservice.service.EduChapterService;
-import com.xin.eduservice.service.EduCourseDescriptionService;
-import com.xin.eduservice.service.EduCourseService;
+import com.xin.eduservice.service.*;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.xin.eduservice.service.EduVideoService;
 import com.xin.servicebase.exceptionHandler.GuliException;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -37,6 +43,9 @@ public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse
 
     @Resource
     private EduChapterService chapterService;
+
+    @Resource
+    private EduTeacherService teacherService;
 
     // 添加课程基本信息的方法
     @Override
@@ -115,5 +124,52 @@ public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse
         if(result == 0) { //失败返回
             throw new GuliException(20001,"删除失败");
         }
+    }
+
+    @Override
+    public Map<String, Object> getCourseFrontList(Page<EduCourse> pageCourse, CourseFrontVo courseFrontVo) {
+        LambdaQueryWrapper<EduCourse> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(!StringUtils.isEmpty(courseFrontVo.getSubjectParentId()), EduCourse::getSubjectParentId, courseFrontVo.getSubjectParentId());
+        wrapper.eq(!StringUtils.isEmpty(courseFrontVo.getSubjectId()), EduCourse::getSubjectId, courseFrontVo.getSubjectId());
+        wrapper.orderByDesc(!StringUtils.isEmpty(courseFrontVo.getBuyCountSort()),EduCourse::getBuyCount);
+        wrapper.orderByDesc(!StringUtils.isEmpty(courseFrontVo.getGmtCreateSort()),EduCourse::getGmtCreate);
+        wrapper.orderByDesc(!StringUtils.isEmpty(courseFrontVo.getPriceSort()),EduCourse::getPrice);
+
+        baseMapper.selectPage(pageCourse,wrapper);
+
+        List<EduCourse> records = pageCourse.getRecords();
+        long current = pageCourse.getCurrent();
+        long pages = pageCourse.getPages();
+        long total = pageCourse.getTotal();
+        long size = pageCourse.getSize();
+        boolean hasNext  = pageCourse.hasNext();
+        boolean hasPrevious  = pageCourse.hasPrevious();
+
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("items", records);
+        map.put("current", current);
+        map.put("pages", pages);
+        map.put("size", size);
+        map.put("total", total);
+        map.put("hasNext", hasNext);
+        map.put("hasPrevious", hasPrevious);
+
+        return map;
+
+
+    }
+
+    @Override
+    public CourseWebVo getBaseCourseInfo(String courseId) {
+        this.updatePageViewCount(courseId);
+        return baseMapper.getBaseCourseInfo(courseId);
+    }
+
+    @Override
+    public void updatePageViewCount(String id) {
+        EduCourse course = baseMapper.selectById(id);
+
+        course.setViewCount(course.getViewCount() + 1);
+        baseMapper.updateById(course);
     }
 }
