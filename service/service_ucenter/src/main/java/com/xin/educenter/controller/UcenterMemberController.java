@@ -3,9 +3,11 @@ package com.xin.educenter.controller;
 
 import com.xin.commonutils.JwtUtils;
 import com.xin.commonutils.R;
+import com.xin.commonutils.ordervo.UcenterMemberOrder;
 import com.xin.educenter.entity.UcenterMember;
 import com.xin.educenter.entity.vo.RegisterVo;
 import com.xin.educenter.service.UcenterMemberService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -53,6 +55,23 @@ public class UcenterMemberController {
         //查询数据库根据用户id获取用户信息
         UcenterMember member = memberService.getById(memberId);
         return R.ok().data("userInfo",member);
+    }
+
+    // 根据用户id获取用户信息
+    @GetMapping("getUserInfoOrder/{id}")
+    public UcenterMemberOrder getUserInfoOrder(@PathVariable String id){
+        UcenterMember member = memberService.getById(id);
+        UcenterMemberOrder ucenterMemberOrder = new UcenterMemberOrder();
+        BeanUtils.copyProperties(member, ucenterMemberOrder);
+
+        return ucenterMemberOrder;
+    }
+
+    // 查询某一天注册人数
+    @GetMapping("countRegister/{day}")
+    public R countRegister(@PathVariable String day){
+        Integer count = memberService.countRegisterDay(day);
+        return R.ok().data("countRegister", count);
     }
 
 }
