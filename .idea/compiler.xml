@@ -7,22 +7,26 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="service_oss" />
-        <module name="service_acl" />
-        <module name="service_statistics" />
         <module name="common_utils" />
-        <module name="service_vod" />
-        <module name="service_base" />
-        <module name="service_edu" />
         <module name="service_msm" />
         <module name="service_order" />
         <module name="service_cms" />
+        <module name="service_oss" />
+        <module name="service_statistics" />
+        <module name="service_acl" />
+        <module name="service_vod" />
+        <module name="canal_client" />
+        <module name="service_base" />
+        <module name="service_edu" />
+        <module name="api_gateway" />
         <module name="service_ucenter" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="api_gateway" options="-parameters" />
+      <module name="canal_client" options="-parameters" />
       <module name="common" options="" />
       <module name="common_utils" options="-parameters" />
       <module name="guli_parent" options="" />
