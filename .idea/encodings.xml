@@ -3,17 +3,23 @@
   <component name="Encoding" defaultCharsetForPropertiesFiles="GBK">
     <file url="file://$PROJECT_DIR$/canal_client/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common/common_utils/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/common_utils/src/main/java/com/xin/commonutils/MD5.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/common/common_utils/src/main/java/com/xin/commonutils/ResponseUtil.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/common/service_base/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/spring_security/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/spring_security/src/main/java/com/xin/serurity" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/infrastructure/api_gateway/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/infrastructure/api_gateway/src/main/java/com/xin/gateway/config" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/infrastructure/api_gateway/src/main/java/com/xin/gateway/filter" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/infrastructure/api_gateway/src/main/java/com/xin/gateway/handler" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/infrastructure/api_gateway/src/main/java/com/xin/gateway/config" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/infrastructure/api_gateway/src/main/java/com/xin/gateway/filter" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/infrastructure/api_gateway/src/main/java/com/xin/gateway/handler" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/infrastructure/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/infrastructure/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service/service-oss/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service/service_acl/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service/service_acl/src/main/java/com/atguigu" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service/service_acl/src/main/java/com/xin/aclservice" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service/service_acl/src/main/resources/application.properties" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service/service_cms/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service/service_cms/src/main/resources/application.properties" charset="UTF-8" />
