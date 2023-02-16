@@ -34,7 +34,7 @@ public class VodController {
     public R uploadAlyiVideo(MultipartFile file) {
         //返回上传视频id
         String videoId = vodService.uploadVideoAly(file);
-        return R.ok().data("videoId",videoId);
+        return R.ok().message("视频上传成功").data("videoId",videoId);
     }
 
     //根据视频id删除阿里云视频

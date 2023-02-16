@@ -30,7 +30,7 @@ import java.util.List;
 @Api(description="讲师管理")
 @RestController
 @RequestMapping("/eduservice/teacher")
-@CrossOrigin
+//@CrossOrigin
 public class EduTeacherController {
 
     @Resource
@@ -43,7 +43,7 @@ public class EduTeacherController {
     public R findAllTeacher(){
         List<EduTeacher> list = eduTeacherService.list(null);
 
-        // 模拟异常
+//        // 模拟异常
 //        try {
 //            int i = 10 / 0;
 //        }catch (Exception e){

@@ -145,7 +145,7 @@ public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse
         boolean hasNext  = pageCourse.hasNext();
         boolean hasPrevious  = pageCourse.hasPrevious();
 
-        Map<String, Object> map = new HashMap<String, Object>();
+        Map<String, Object> map = new HashMap<>();
         map.put("items", records);
         map.put("current", current);
         map.put("pages", pages);
